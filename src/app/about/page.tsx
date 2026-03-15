@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Heart, Shield, Users, Hammer } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
@@ -8,94 +8,134 @@ export const metadata: Metadata = {
     "Made Local Co. connects passionate makers with conscious consumers. Learn about our mission.",
 };
 
+const VALUES = [
+  {
+    icon: Shield,
+    name: "Authenticity",
+    desc: "Real makers, real stories. No dropshippers, no resellers. Every listing is a person who makes something with their hands.",
+  },
+  {
+    icon: Users,
+    name: "Community",
+    desc: "Local economies thrive when money stays close to home. We exist to strengthen the connection between makers and their neighbors.",
+  },
+  {
+    icon: Heart,
+    name: "Accessibility",
+    desc: "Free for makers to be found, simple for consumers to search. We believe visibility shouldn't cost a fortune.",
+  },
+  {
+    icon: Hammer,
+    name: "Craftsmanship",
+    desc: "We celebrate skill, tradition, and the made-by-hand ethos. The world needs more things made with intention.",
+  },
+];
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="font-[family-name:var(--font-fraunces)] text-3xl font-bold text-charcoal sm:text-4xl">
-        About Made Local Co.
-      </h1>
+    <>
+      {/* Hero */}
+      <section className="border-b border-stone-200/60 bg-stone-100/50 px-6 py-16 sm:py-24 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-forest">
+            Our story
+          </p>
+          <h1 className="mt-3 font-[family-name:var(--font-fraunces)] text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            We believe every maker
+            <br />
+            deserves to be found.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-500">
+            Made Local Co. is the simplest way to discover artisans, craftsmen,
+            and farmers in your community. One search. Real people. No middlemen.
+          </p>
+        </div>
+      </section>
 
-      <div className="mt-8 space-y-6 text-clay leading-relaxed">
-        <p>
-          In a world where we&apos;re increasingly disconnected from what we buy
-          and who made it, Made Local Co. creates a bridge between local
-          artisans, craftsmen, and farmers and the conscious consumers who want
-          to support them.
-        </p>
+      {/* Problem */}
+      <section className="mx-auto max-w-3xl px-6 py-16 sm:py-24 lg:px-8">
+        <div className="space-y-6 text-[15px] leading-relaxed text-stone-600">
+          <p className="text-xl font-medium leading-relaxed text-stone-800">
+            Finding locally made goods shouldn&apos;t require hours of
+            research across farmers markets, Etsy, Instagram, and word of
+            mouth.
+          </p>
 
-        <p className="text-xl font-medium text-charcoal">
-          Type your zip code. Find what you&apos;re looking for. Meet the person
-          who made it.
-        </p>
+          <p>
+            But right now, there&apos;s no single place to search
+            &ldquo;handmade ceramics within 30 miles of me.&rdquo; Consumers
+            want to buy local but don&apos;t know where to look. And small
+            artisans — the people doing the most interesting, most human work
+            — are buried under algorithms they can&apos;t afford to compete
+            with.
+          </p>
 
-        <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-charcoal pt-4">
-          The problem we&apos;re solving
+          <p>
+            Made Local Co. fixes that. We&apos;re a searchable directory
+            organized by location and craft. Enter your zip code, find
+            what&apos;s nearby, and reach out directly to the person who made
+            it. No platform fees. No cuts of sales. Just connection.
+          </p>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="border-y border-stone-200/60 bg-stone-100/50">
+        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-tight sm:text-3xl">
+              What we stand for
+            </h2>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {VALUES.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div
+                  key={value.name}
+                  className="rounded-2xl border border-stone-200/80 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-50 text-forest">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="mt-4 font-[family-name:var(--font-fraunces)] text-lg font-semibold tracking-tight">
+                    {value.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-500">
+                    {value.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-3xl px-6 py-16 text-center sm:py-24 lg:px-8">
+        <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-tight sm:text-3xl">
+          Ready to get involved?
         </h2>
-        <p>
-          Finding locally made goods requires hours of research across farmers
-          markets, Etsy, Instagram, and word of mouth. There&apos;s no single
-          source to search &ldquo;handmade ceramics within 30 miles of my zip
-          code.&rdquo;
+        <p className="mx-auto mt-4 max-w-lg text-base text-stone-500">
+          Whether you&apos;re looking to discover local makers or you are one —
+          there&apos;s a place for you here.
         </p>
-        <p>
-          Meanwhile, small artisans struggle with visibility. They&apos;re
-          buried in algorithm-driven platforms or limited to physical farmers
-          markets. There&apos;s no affordable way to be discovered by local
-          buyers who are specifically looking for what they make.
-        </p>
-
-        <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-charcoal pt-4">
-          Our values
-        </h2>
-        <ul className="space-y-3">
-          <li>
-            <strong className="text-charcoal">Authenticity</strong> — Real
-            makers, real stories, no dropshippers.
-          </li>
-          <li>
-            <strong className="text-charcoal">Community</strong> — Local
-            economies, reduced waste, human connection.
-          </li>
-          <li>
-            <strong className="text-charcoal">Accessibility</strong> — Free for
-            makers to be found, simple for consumers to search.
-          </li>
-          <li>
-            <strong className="text-charcoal">Craftsmanship</strong> —
-            Celebrating skill, tradition, and the made-by-hand ethos.
-          </li>
-        </ul>
-
-        <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-charcoal pt-4">
-          How it works
-        </h2>
-        <p>
-          Made Local Co. is a searchable directory of local makers organized by
-          location and category. Consumers enter their zip code and find
-          artisans nearby. Each listing includes the maker&apos;s story, what
-          they create, and how to contact them directly.
-        </p>
-        <p>
-          For makers, basic listings are always free. We never take a cut of
-          your sales. We connect you directly with customers who value what you
-          make.
-        </p>
-      </div>
-
-      <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-        <Link
-          href="/search"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-6 py-3 font-semibold text-white transition-colors hover:bg-forest-light"
-        >
-          Find Makers <ArrowRight className="h-4 w-4" />
-        </Link>
-        <Link
-          href="/join"
-          className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-terracotta px-6 py-3 font-semibold text-terracotta transition-colors hover:bg-terracotta hover:text-white"
-        >
-          List Your Business <ArrowRight className="h-4 w-4" />
-        </Link>
-      </div>
-    </div>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            href="/search"
+            className="inline-flex items-center gap-2 rounded-xl bg-stone-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-stone-800 active:scale-[0.98]"
+          >
+            Find Makers <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/join"
+            className="inline-flex items-center gap-2 rounded-xl border border-stone-300 px-6 py-3 text-sm font-semibold text-stone-700 transition-all hover:border-stone-400 hover:bg-stone-50"
+          >
+            List Your Business <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

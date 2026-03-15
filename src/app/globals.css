@@ -1,34 +1,68 @@
 @import "tailwindcss";
 
 @theme inline {
+  /* Warm neutrals */
+  --color-stone-50: #FAFAF9;
+  --color-stone-100: #F5F5F4;
+  --color-stone-200: #E7E5E4;
+  --color-stone-300: #D6D3D1;
+  --color-stone-400: #A8A29E;
+  --color-stone-500: #78716C;
+  --color-stone-600: #57534E;
+  --color-stone-700: #44403C;
+  --color-stone-800: #292524;
+  --color-stone-900: #1C1917;
+  --color-stone-950: #0C0A09;
+
+  /* Brand */
   --color-forest: #2D5016;
-  --color-forest-light: #3a6b1d;
+  --color-forest-50: #F3F8EF;
+  --color-forest-100: #E4EFD9;
+  --color-forest-600: #244210;
+  --color-forest-700: #1B330C;
   --color-wheat: #F5E6C8;
+  --color-wheat-light: #FAF3E6;
   --color-terracotta: #C65D3B;
-  --color-terracotta-light: #d4724f;
-  --color-cream: #FAF8F5;
-  --color-charcoal: #2C2C2C;
+  --color-terracotta-50: #FEF3EF;
+  --color-terracotta-600: #B04E2F;
   --color-sage: #8BA876;
   --color-clay: #8B7355;
-  --color-success: #4A7C23;
-  --color-warning: #D4A84B;
-  --color-error: #C23B3B;
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-source-sans);
 }
 
-:root {
-  --background: #FAF8F5;
-  --foreground: #2C2C2C;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #FAFAF9;
+  color: #57534E;
   font-family: var(--font-body), -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
   font-family: var(--font-display), Georgia, serif;
+  color: #1C1917;
+}
+
+/* Subtle grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

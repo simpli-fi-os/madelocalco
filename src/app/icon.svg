@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#111111"/>
+  <g fill="#F5F5F5" transform="translate(0,-16)">
+    <!-- Horn (left taper) -->
+    <path d="M56 212 C40 212 30 226 42 240 L104 240 L104 212 Z"/>
+    <!-- Flat top working surface -->
+    <rect x="104" y="200" width="228" height="48" rx="6"/>
+    <!-- Step block (right) -->
+    <rect x="332" y="200" width="76" height="84" rx="5"/>
+    <!-- Body -->
+    <path d="M136 248 L126 316 C124 336 144 348 168 350 L184 352 L184 368 L348 368 L348 352 L364 350 C388 348 404 336 402 316 L392 248 Z"/>
+    <!-- Waist -->
+    <rect x="200" y="368" width="132" height="24" rx="6"/>
+    <!-- Base -->
+    <rect x="140" y="392" width="252" height="38" rx="8"/>
+  </g>
+</svg>
