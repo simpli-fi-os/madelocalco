@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
+import { AnvilLogo } from "./anvil-logo";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,17 +12,8 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-stone-900">
-            <svg viewBox="0 0 512 512" className="h-5 w-5">
-              <g fill="#F5F5F5" transform="translate(0,-16)">
-                <path d="M56 212 C40 212 30 226 42 240 L104 240 L104 212 Z" />
-                <rect x="104" y="200" width="228" height="48" rx="6" />
-                <rect x="332" y="200" width="76" height="84" rx="5" />
-                <path d="M136 248 L126 316 C124 336 144 348 168 350 L184 352 L184 368 L348 368 L348 352 L364 350 C388 348 404 336 402 316 L392 248 Z" />
-                <rect x="200" y="368" width="132" height="24" rx="6" />
-                <rect x="140" y="392" width="252" height="38" rx="8" />
-              </g>
-            </svg>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-stone-900 text-stone-50">
+            <AnvilLogo className="h-5 w-5" separatorColor="#0c0a09" />
           </div>
           <span className="font-[family-name:var(--font-fraunces)] text-lg font-semibold tracking-tight text-stone-900">
             Made Local Co.

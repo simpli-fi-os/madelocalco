@@ -1,17 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <rect width="512" height="512" rx="108" ry="108" fill="#111111"/>
-  <g fill="#F5F5F5" transform="translate(0,-16)">
-    <!-- Horn (left taper) -->
-    <path d="M56 212 C40 212 30 226 42 240 L104 240 L104 212 Z"/>
-    <!-- Flat top working surface -->
-    <rect x="104" y="200" width="228" height="48" rx="6"/>
-    <!-- Step block (right) -->
-    <rect x="332" y="200" width="76" height="84" rx="5"/>
-    <!-- Body -->
-    <path d="M136 248 L126 316 C124 336 144 348 168 350 L184 352 L184 368 L348 368 L348 352 L364 350 C388 348 404 336 402 316 L392 248 Z"/>
-    <!-- Waist -->
-    <rect x="200" y="368" width="132" height="24" rx="6"/>
-    <!-- Base -->
-    <rect x="140" y="392" width="252" height="38" rx="8"/>
+  <g fill="#F5F5F5">
+    <!-- Horn (left, curved downward with pointed tip) -->
+    <path d="M100 210 C80 210 55 220 45 240 C38 255 50 268 70 268 L170 268 L170 210 Z"/>
+    <!-- Flat top surface (right of step) -->
+    <rect x="178" y="195" width="220" height="40"/>
+    <!-- Step block (left portion of top, slightly taller) -->
+    <rect x="170" y="185" width="8" height="83"/>
+    <!-- Hardy hole / step detail -->
+    <rect x="178" y="195" width="50" height="73"/>
+    <!-- Main face right of step -->
+    <rect x="236" y="195" width="162" height="73"/>
+    <!-- Body (flared, curves inward) -->
+    <path d="M140 276 C110 276 75 310 80 340 C85 365 115 380 155 385 L195 388 L195 388 C200 388 200 395 195 395 L170 398 C160 400 158 410 165 414 L200 414 L200 414 L312 414 L347 414 C354 414 352 400 342 398 L317 395 C312 395 312 388 317 388 L357 385 C397 380 427 365 432 340 C437 310 402 276 372 276 Z"/>
+    <!-- Left foot -->
+    <rect x="185" y="414" width="52" height="22" rx="3"/>
+    <!-- Right foot -->
+    <rect x="275" y="414" width="52" height="22" rx="3"/>
+  </g>
+  <!-- Section lines (black separators for detail) -->
+  <g fill="#111111">
+    <rect x="170" y="268" width="228" height="8"/>
+    <rect x="228" y="195" width="8" height="73"/>
   </g>
 </svg>
